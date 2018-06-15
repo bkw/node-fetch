@@ -1582,9 +1582,7 @@ describe('node-fetch', () => {
 	it("should fail with illegal values for option `localAddress`", function () {
 		const url = `${base}hello`;
 		const illegalBind = fetch(url, { localAddress: '1.1.1.1.1' });
-		return expect(illegalBind).to.eventually.be.rejectedWith(
-			'"localAddress" option must be a valid IP: 1.1.1.1.1'
-		);
+		return expect(illegalBind).to.eventually.be.rejected;
 	});
 });
 
